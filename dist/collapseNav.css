@@ -64,8 +64,10 @@
 
 .collapse-nav ul.dropdown-menu .dropdown-menu {
     top: 0;
+    bottom: 0;
     right: auto;
     left: 100%;
+    margin: 0;
 }
 
 .collapse-nav .dropdown-menu li {
