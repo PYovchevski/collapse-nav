@@ -6,9 +6,10 @@
  * by Petko Yovchevski
 
  Website: https://www.plumtex.com
- Docs: https://github.com/PYovchevski/collapse-nav
+ Docs: http://pyovchevski.github.io/collapse-nav
  Repo: https://github.com/PYovchevski/collapse-nav
  Issues: https://github.com/PYovchevski/collapse-nav/issues
+
  */
 
 function collapseNav(selector, config) {

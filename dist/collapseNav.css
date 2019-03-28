@@ -1,3 +1,16 @@
+/*
+
+ * CollapseNav.js - v1.0
+ * jQuery Responsive Navigation
+ * MIT License
+ * by Petko Yovchevski
+
+ Website: https://www.plumtex.com
+ Docs: http://pyovchevski.github.io/collapse-nav
+ Repo: https://github.com/PYovchevski/collapse-nav
+ Issues: https://github.com/PYovchevski/collapse-nav/issues
+
+ */
 
 .collapse-nav {
     overflow: hidden;
