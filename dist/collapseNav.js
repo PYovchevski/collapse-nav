@@ -15,17 +15,11 @@
 function collapseNav(selector, config) {
     var navigation = selector;
 
-    var possible_buttons = -3;
-    var ul_width = $(navigation).width();
-    var li_width = 0;
+    var original_navigation = selector;
 
-    $(navigation).children("li").each(function (i) {
-        if (ul_width >= li_width) {
-            possible_buttons = possible_buttons + 1;
-        }
-        li_width = li_width + $(this).outerWidth(true);
-    })
-    /* Config */
+    $(window).resize(function () {
+        $(navigation).html($(original_navigation).html());
+    });
 
     var responsive = config.responsive;
     if (!responsive) {
@@ -35,20 +29,6 @@ function collapseNav(selector, config) {
     var mobile_break = config.mobile_break;
     if (!mobile_break) {
         mobile_break = 992;
-    }
-
-    if (responsive == 1) {
-        number_of_buttons = possible_buttons;
-    } else {
-        var number_of_buttons = config.number_of_buttons - 1;
-        if (!number_of_buttons) {
-            number_of_buttons = 4 - 1;
-        }
-    }
-
-    var more_text = config.more_text;
-    if (!more_text) {
-        more_text = 'More';
     }
 
     var li_class = config.li_class;
@@ -66,9 +46,42 @@ function collapseNav(selector, config) {
         li_ul_class = 'dropdown-menu';
     }
 
+
+    var more_text = config.more_text;
+    if (!more_text) {
+        more_text = 'More';
+    }
+
     var caret = config.caret;
     if (!caret) {
         caret = '<span class="caret"></span>';
+    }
+
+    var ul_width = $(navigation).outerWidth(true);
+    var li_width = 0;
+    var possible_buttons = -3;
+
+    //The New More Button Width
+    $(navigation).children().first().clone().appendTo(navigation);
+    $(navigation).children().last().find('a').html(more_text + ' ' + caret).css({'vissibility': 'hidden'});
+    var the_more_button_width = $(navigation).children().last();
+    li_width = li_width + the_more_button_width.outerWidth(true) + 50;
+    the_more_button_width.remove();
+
+    $(navigation).children("li").each(function (i) {
+        if (ul_width >= li_width) {
+            possible_buttons = possible_buttons + 1;
+        }
+        li_width = li_width + $(this).outerWidth(true);
+    });
+
+    if (responsive == 1) {
+        number_of_buttons = possible_buttons;
+    } else {
+        var number_of_buttons = config.number_of_buttons - 1;
+        if (!number_of_buttons) {
+            number_of_buttons = 4 - 1;
+        }
     }
 
     if ($(window).width() < mobile_break) {
