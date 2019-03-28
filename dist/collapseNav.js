@@ -14,12 +14,7 @@
 
 function collapseNav(selector, config) {
     var navigation = selector;
-
     var original_navigation = selector;
-
-    $(window).resize(function () {
-        $(navigation).html($(original_navigation).html());
-    });
 
     var responsive = config.responsive;
     if (!responsive) {
