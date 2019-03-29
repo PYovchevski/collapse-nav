@@ -27,20 +27,19 @@ function collapseNav(selector, config) {
     }
 
     var li_class = config.li_class;
-    if (!li_class) {
+    if (!li_class && li_class != '') {
         li_class = 'dropdown';
     }
 
     var li_a_class = config.li_a_class;
-    if (!li_a_class) {
+    if (!li_a_class && li_a_class != '') {
         li_a_class = 'dropdown-toggle';
     }
 
     var li_ul_class = config.li_ul_class;
-    if (!li_ul_class) {
+    if (!li_ul_class && li_ul_class != '') {
         li_ul_class = 'dropdown-menu';
     }
-
 
     var more_text = config.more_text;
     if (!more_text) {
@@ -48,7 +47,7 @@ function collapseNav(selector, config) {
     }
 
     var caret = config.caret;
-    if (!caret) {
+    if (!caret && caret != '') {
         caret = '<span class="caret"></span>';
     }
 
