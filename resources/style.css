@@ -40,3 +40,47 @@ main img { max-width:100%; height:auto; margin:30px 0; box-shadow:1px 1px 0 #E2E
 @media only screen and (max-width:1400px) {
 main { padding:50px 50px 20px 300px; }
 }
+
+@media screen and (max-width: 700px) {
+    nav {
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        height: auto;
+    }
+
+    nav ul {
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        height: auto;
+        left: 0;
+        right: 0;
+        transform: translate(0);
+        -webkit-transform: translate(0);
+        -ms-transform: translate(0);
+    }
+    nav #title{
+        margin: 0;
+        padding: 20px;
+    }
+
+    nav .button {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 7px 15px;
+    }
+
+    main {
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        height: auto;
+        padding:15px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+}
