@@ -58,6 +58,7 @@ function collapseNav(selector, config) {
         var ul_width = $(navigation).outerWidth();
         var li_width = 0;
         var possible_buttons = -1;
+        var li_count = 0;
 
         //The New More Button Width
         $(navigation).children().first().clone().appendTo(navigation);
@@ -67,6 +68,7 @@ function collapseNav(selector, config) {
         the_more_button_width.remove();
 
         $(navigation).children("li").each(function (i) {
+            li_count = li_count + 1;
             li_width = li_width + $(this).outerWidth(true);
 
             if (ul_width >= li_width) {
@@ -84,6 +86,10 @@ function collapseNav(selector, config) {
         }
 
         if ($(window).width() < mobile_break) {
+            return;
+        }
+
+        if (li_count <= possible_buttons + 3) {
             return;
         }
 
