@@ -51,9 +51,9 @@ function collapseNav(selector, config) {
         caret = '<span class="caret"></span>';
     }
 
-    var ul_width = $(navigation).outerWidth(true);
+    var ul_width = $(navigation).outerWidth();
     var li_width = 0;
-    var possible_buttons = -3;
+    var possible_buttons = -1;
 
     //The New More Button Width
     $(navigation).children().first().clone().appendTo(navigation);
@@ -63,10 +63,13 @@ function collapseNav(selector, config) {
     the_more_button_width.remove();
 
     $(navigation).children("li").each(function (i) {
+        console.log($(this).text());
+        console.log($(this).outerWidth(true));
+        li_width = li_width + $(this).outerWidth(true);
+
         if (ul_width >= li_width) {
             possible_buttons = possible_buttons + 1;
         }
-        li_width = li_width + $(this).outerWidth(true);
     });
 
     if (responsive == 1) {
