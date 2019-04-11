@@ -13,11 +13,11 @@
     <link rel="stylesheet" href="dist/collapseNav.css">
     <script src="dist/collapseNav.js"></script>
     <script>
-        $(window).on('load', function () {
+        $(document).ready(function () {
             $('.collapse-nav').collapseNav({
                 responsive: 1,
                 more_text: 'More Button',
-                mobile_break: 800,
+                mobile_break: 800
             });
         })
     </script>
@@ -110,7 +110,7 @@
 </pre>
 
         <h3>Initialize your Collapse-Nav in your script file or an inline script tag</h3>
-        <pre>$(window).on('load', function () {
+        <pre>$(document).ready(function () {
   $('.your-class').collapseNav({
     setting-name: setting-value
   });
@@ -137,10 +137,10 @@
 &lt;script type="text/javascript" src="collapse-nav/dist/collapseNav.js">&lt;/script>
 
 &lt;script type="text/javascript">
-    $(window).on('load', function () {
+    $(document).ready(function () {
         $('.your-class').collapseNav({
             setting-name: setting-value
-    });
+        });
     });
 &lt;/script>
 
